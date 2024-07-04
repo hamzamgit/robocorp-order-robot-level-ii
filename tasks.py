@@ -30,7 +30,7 @@ def order_robots_from_RobotSpareBin():
 def archive_receipts():
     """Archives all the receipt pdfs into a single zip archive"""
     lib = Archive()
-    lib.archive_folder_with_zip("./output/receipts", "./output/receipts.zip")
+    lib.archive_folder_with_zip("./output/receipt", "./output/receipts.zip")
 
 
 def close_annoying_banner():
@@ -67,7 +67,7 @@ def fill_form_and_submit(order):
     embed_screenshot_to_pdf(pdf_path, screenshot_path)
     click_order_another()
 
-    
+
 def click_submit_button():
     page = browser.page()
     while True:
@@ -98,8 +98,8 @@ def store_receipt_as_pdf(order_number):
 def embed_screenshot_to_pdf(pdf_path, screenshot_path):
     """Embed screenshot to the pdf and save it"""
     pdf = PDF()
-    pdf.add_watermark_image_to_pdf(image_path=screenshot_path, 
-                                   source_path=pdf_path, 
+    pdf.add_watermark_image_to_pdf(image_path=screenshot_path,
+                                   source_path=pdf_path,
                                    output_path=pdf_path)
 
 
